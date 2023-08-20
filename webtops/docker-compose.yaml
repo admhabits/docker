@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   webtop:
-    image: lscr.io/linuxserver/webtop
+    image: snipkode/webtop:latest
     container_name: webtop-latest
     privileged: true #optional
     security_opt:
