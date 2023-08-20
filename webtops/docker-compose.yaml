@@ -1,0 +1,20 @@
+version: "2.1"
+services:
+  webtop:
+    image: lscr.io/linuxserver/webtop
+    container_name: webtop-latest
+    privileged: true #optional
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Jakarta
+      - SUBFOLDER=/ #optional
+    volumes:
+      - /home/alam/config:/config
+      - /var/run/docker.sock:/var/run/docker.sock #optional
+    ports:
+      - 3020:3000 # change the left side port if you can't use 3000
+    shm_size: "1gb" # optional
+    restart: unless-stopped
